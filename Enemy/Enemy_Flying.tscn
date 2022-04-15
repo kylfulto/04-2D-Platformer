@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemy/Enemy_Ground.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Enemy/enemyFlying_1.png" type="Texture" id=2]
+
+[node name="Enemy_Flying" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Right" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 40, 0 )
+
+[node name="Left" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -40, 0 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 32, -13.1, 32, 12.4, 28.3, 19, 17.4, 19, 14.5, 15.5, 11.6, 19, -11, 19, -14.3, 16.1, -17.2, 19, -28, 19, -32, 13.4, -32, -12.2, -28, -18.6, -17, -19, -7.2, -9, 6.2, -9, 16.2, -19, 27, -19 )
